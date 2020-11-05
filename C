@@ -17,6 +17,7 @@ A
 A B
 A B C
 A B C D
+************************************************
 #include <stdio.h>
 int main(void)
 {
@@ -37,5 +38,142 @@ int main(void)
 	printf("及格人数有%d个\n", c1); 
 	return 0;
 }
+************************************************
+#include <stdio.h>
+int main(void)
+{
+  //读入输入的月份，判断属于哪一个季节
+	int m;
+
+	printf("请输入一个月份：");
+	scanf("%d", &m);
+
+	switch((m-1)/3){
+		case 0:
+		printf("春季\n");
+			break;
+		case 1:
+		printf("夏季\n");
+			break;
+		case 2:
+		printf("秋季\n");
+			break;
+		case 3:
+		printf("冬季\n");
+			break;
+		default:
+			break;
+	}
+	return 0;
+}
+**************************************************
+#include <stdio.h>
+int main(void)
+{
+	   //判断是否为质数
+	int a;
+    int b=0;
+	int i;
+	printf("请输入一个整型数：");
+	scanf("%d", &a);
+    for(i = 1; i <= a; i++ ){
+		if(a % i == 0){ 
+			b++;
+		}
+	}
+	if(b == 2){
+		printf("这是一个质数\n");
+	}else{
+		printf("这不是质数\n");
+	}
+	return 0;
+}
+***************************************************
+#include <stdio.h>
+int main(void)
+{
+	int n;
+	printf("请输入变量n：");
+	scanf("%d", &n);
+
+	n = n | 0x1 << 3;
+	printf("n:%d\n", n);
+	n = n & ~(0x1 << 5);
+	printf("n:%d\n", n);
+
+	return 0;
+}
+*********************************************
+#include <stdio.h>
+int main(void)
+{
+/////打印乘法口诀
+	for (int i = 1; i <= 9; i++) {
+		for (int j = 1; j <= i; j++) {
+			printf("\33[32m\33[45m%d*%d=%-3d", j, i, j*i);
+			printf("\33[0m");
+		}
+		printf("\n");
+	}
+	return 0;
+}
+********************************************************
+#include <stdio.h>
+int main(void)
+{
+	int pre1, pre2, cur;//////Fibonacci数列
+
+	pre1 = pre2 = 1;
+
+	printf("1, 1, ");
+	for (int i = 0; i < 8; i++) {
+		cur  = pre1 + pre2;
+		printf("%d, ", cur);
+		pre2 = pre1;
+		pre1 = cur;
+	}
+	printf("\b\b \n");
+
+	return 0;
+}
+************************************************************
+#include <stdio.h>
+
+int main(void)
+{
+	int row, i, j;
+
+	for (row = 0; row < 10; row ++) {
+		// 空格	
+		for (i = 0; i < 10-row-1; i++) {
+			printf(" ");
+		}
+		for (j = 0; j < 2*row+1; j++) {
+			printf("*");
+		}
+		printf("\n");
+	}
+
+	for (row = 0; row < 10; row++) {
+		// 空格
+		for (i = 0; i < row; i++) 
+			printf(" ");
+		for (j = 0; j < 4; j++)
+			printf("*");
+		printf("\n");
+	}
+
+	for (row = 0; row < 30; row ++) {
+		for (i = 0; i <= row; i++) {
+			printf("%c", 'A'+i%26);
+		}
+		printf("\n");
+	}
+
+	return 0;
+}
+
+
+
 
 
